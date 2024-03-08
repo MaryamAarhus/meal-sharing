@@ -1,16 +1,17 @@
 {
   "name": "meal-sharing",
   "version": "1.0.0",
+  "type": "module",
   "description": "Website for sharing meals",
   "engines": {
     "node": "8.11.1"
   },
   "scripts": {
     "build": "webpack --mode production",
-    "start": "npm run build && node ./src/backend/server",
+    "start": "npm run build && node ./src/app.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-    "server": "nodemon ./src/backend/server",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "server": "nodemon ./src/app.js",
+    "dev": "nodemon ./src/app.js"
   },
   "author": "Benjamin Hughes",
   "license": "MIT",
@@ -27,7 +28,7 @@
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
-    "cors": "^2.8.4",
+    "cors": "^2.8.5",
     "css-loader": "^5.0.0",
     "debug": "~2.6.0",
     "dotenv": "^4.0.0",

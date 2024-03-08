@@ -12,4 +12,16 @@ router.get("/", async (request, response) => {
   }
 });
 
+//Get /api/meal all meals
+
+
+//Post /api/meals - add a new meal to the database
+
+router.post("/", async(req, res) => {
+  try{
+    const newMeal = req.body;
+    const addMeal = await knex("meal").insert(newMeal);
+  }
+})
+
 module.exports = router;
